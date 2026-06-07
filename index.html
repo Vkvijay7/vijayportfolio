@@ -8,6 +8,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Vijay Karthick | Digital Designer</title>
+    
+    <!-- Security Blockers to prevent code inspection -->
+    <script>
+      // 1. Disable Right Click
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+      // 2. Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S)
+      document.addEventListener('keydown', (e) => {
+        // F12
+        if (e.keyCode === 123) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+Shift+I / Cmd+Opt+I (DevTools)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 73) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+Shift+J / Cmd+Opt+J (Console)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 74) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+U / Cmd+U (View Source)
+        if ((e.ctrlKey || e.metaKey) && e.keyCode === 85) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+S / Cmd+S (Save Page)
+        if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // 3. DevTools Debugger Loop
+      (function() {
+        const threshold = 160;
+        setInterval(function() {
+          const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+          const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+          
+          if (widthThreshold || heightThreshold) {
+            (function() {
+              (function a() {
+                try {
+                  (function b(i) {
+                    if (('' + (i / i)).length !== 1 || i % 20 === 0) {
+                      (function() {}).constructor('debugger')();
+                    } else {
+                      debugger;
+                    }
+                    b(++i);
+                  })(0);
+                } catch (e) {
+                  setTimeout(a, 50);
+                }
+              })();
+            })();
+          }
+        }, 1000);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

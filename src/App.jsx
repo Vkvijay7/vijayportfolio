@@ -375,11 +375,23 @@ export default function App() {
 
   const toggleAccordion = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'));
+    }, 350);
   };
 
-  const backfaceStyle = {
+  const frontFaceStyle = {
     backfaceVisibility: 'hidden',
     WebkitBackfaceVisibility: 'hidden',
+    transform: 'translateZ(1px)',
+    WebkitTransform: 'translateZ(1px)',
+  };
+
+  const backFaceStyle = {
+    backfaceVisibility: 'hidden',
+    WebkitBackfaceVisibility: 'hidden',
+    transform: 'rotateY(180deg) translateZ(1px)',
+    WebkitTransform: 'rotateY(180deg) translateZ(1px)',
   };
 
   return (
@@ -419,7 +431,7 @@ export default function App() {
             <span className="fade-in-text font-sans font-semibold text-[#ffde00] tracking-[0.3em] text-xs md:text-sm uppercase mb-2">
               {nameText}
             </span>
-            <h1 className="font-antonio text-6xl sm:text-7xl md:text-8xl lg:text-[7.2vw] leading-none tracking-tight overflow-hidden flex select-none font-bold text-[#F8F9FA]">
+            <h1 className="font-antonio text-[11.5vw] sm:text-7xl md:text-8xl lg:text-[7.2vw] leading-none tracking-tight overflow-hidden flex select-none font-bold text-[#F8F9FA]">
               {leftText.split("").map((char, index) => (
                 <span key={index} className="inline-block overflow-hidden h-[1.15em] relative">
                   <span className="inline-block char-reveal">
@@ -433,12 +445,12 @@ export default function App() {
           {/* CENTER: 3D Flip Card Spacer (Invisible layout guide) */}
           <div 
             ref={heroSpacerRef}
-            className="w-[252px] h-[342px] sm:w-[288px] sm:h-[387px] md:w-[315px] md:h-[432px] lg:w-[342px] lg:h-[468px] flex-shrink-0 pointer-events-none"
+            className="w-[220px] h-[300px] sm:w-[288px] sm:h-[387px] md:w-[315px] md:h-[432px] lg:w-[342px] lg:h-[468px] flex-shrink-0 pointer-events-none"
           />
 
           {/* RIGHT CONTENT: "DEVELOPER" & Subtitle */}
           <div className="flex-grow flex-shrink flex flex-col items-center md:items-start text-center md:text-left z-10 pointer-events-none select-none">
-            <h1 className="font-antonio text-6xl sm:text-7xl md:text-8xl lg:text-[7.2vw] leading-none tracking-tight overflow-hidden flex select-none mb-4 md:mb-6 font-bold text-[#F8F9FA]">
+            <h1 className="font-antonio text-[11.5vw] sm:text-7xl md:text-8xl lg:text-[7.2vw] leading-none tracking-tight overflow-hidden flex select-none mb-4 md:mb-6 font-bold text-[#F8F9FA]">
               {rightText.split("").map((char, index) => (
                 <span key={index} className="inline-block overflow-hidden h-[1.15em] relative">
                   <span className="inline-block char-reveal">
@@ -521,7 +533,7 @@ export default function App() {
           <div className="flex-1 w-full flex items-center justify-center md:justify-end pt-8 md:pt-0">
             <div 
               ref={servicesSpacerRef}
-              className="w-[260px] h-[360px] sm:w-[290px] sm:h-[400px] md:w-[320px] md:h-[440px] lg:w-[350px] lg:h-[480px]"
+              className="w-[220px] h-[300px] sm:w-[290px] sm:h-[400px] md:w-[320px] md:h-[440px] lg:w-[350px] lg:h-[480px]"
             />
           </div>
 
@@ -543,7 +555,7 @@ export default function App() {
           <div className="flex-1 w-full flex items-center justify-center md:justify-start">
             <div 
               ref={aboutSpacerRef}
-              className="w-[252px] h-[342px] sm:w-[288px] sm:h-[387px] md:w-[315px] md:h-[432px] lg:w-[342px] lg:h-[468px]"
+              className="w-[220px] h-[300px] sm:w-[288px] sm:h-[387px] md:w-[315px] md:h-[432px] lg:w-[342px] lg:h-[468px]"
             />
           </div>
 
@@ -634,15 +646,14 @@ export default function App() {
             aria-label="CAF Construction" 
             onClick={() => window.open("https://seosixofficial.github.io/construction1/", '_blank')}
           >
+            {/* Desktop-only full cover layout */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
               style={{ backgroundImage: 'url(/construction.jpg)' }}
             />
-            {/* Top and Bottom Gradient Vignette */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
             
-            {/* Top Content (Title) */}
-            <div className="absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
+            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
                 01 — FEATURED PROJECT
               </span>
@@ -651,11 +662,35 @@ export default function App() {
               </h3>
             </div>
 
-            {/* Bottom Content (Button) */}
-            <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
+            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
               <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
                 <span>View Live Site</span>
                 <span>→</span>
+              </div>
+            </div>
+
+            {/* Mobile-only split layout */}
+            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
+              <div 
+                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
+                style={{ backgroundImage: 'url(/construction.jpg)' }}
+              />
+              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                    01 — FEATURED PROJECT
+                  </span>
+                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
+                    CAF Construction
+                  </h3>
+                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
+                    Building dreams into reality. A premium digital showcase highlighting structural engineering, modern architectural designs, and active project portfolios.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
+                  <span>View Live Site</span>
+                  <span>→</span>
+                </div>
               </div>
             </div>
           </FlowSection>
@@ -665,14 +700,14 @@ export default function App() {
             aria-label="Café & Restaurant" 
             onClick={() => window.open("https://seosixofficial.github.io/cafe/", '_blank')}
           >
+            {/* Desktop-only full cover layout */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
               style={{ backgroundImage: 'url(/cafe.jpg)' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
             
-            {/* Top Content (Title) */}
-            <div className="absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
+            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
                 02 — FEATURED PROJECT
               </span>
@@ -681,11 +716,35 @@ export default function App() {
               </h3>
             </div>
 
-            {/* Bottom Content (Button) */}
-            <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
+            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
               <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
                 <span>View Live Site</span>
                 <span>→</span>
+              </div>
+            </div>
+
+            {/* Mobile-only split layout */}
+            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
+              <div 
+                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
+                style={{ backgroundImage: 'url(/cafe.jpg)' }}
+              />
+              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                    02 — FEATURED PROJECT
+                  </span>
+                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
+                    Café & Restaurant
+                  </h3>
+                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
+                    Good food, good mood. An immersive storefront experience designed for premium coffee shops and dining hubs, featuring ambient menus and client galleries.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
+                  <span>View Live Site</span>
+                  <span>→</span>
+                </div>
               </div>
             </div>
           </FlowSection>
@@ -695,14 +754,14 @@ export default function App() {
             aria-label="SEO Toolkit" 
             onClick={() => window.open("https://seosix-4f731.web.app/", '_blank')}
           >
+            {/* Desktop-only full cover layout */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
               style={{ backgroundImage: 'url(/seosix.png)' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
             
-            {/* Top Content (Title) */}
-            <div className="absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
+            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
                 03 — FEATURED PROJECT
               </span>
@@ -711,11 +770,35 @@ export default function App() {
               </h3>
             </div>
 
-            {/* Bottom Content (Button) */}
-            <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
+            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
               <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
                 <span>View Live Site</span>
                 <span>→</span>
+              </div>
+            </div>
+
+            {/* Mobile-only split layout */}
+            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
+              <div 
+                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
+                style={{ backgroundImage: 'url(/seosix.png)' }}
+              />
+              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                    03 — FEATURED PROJECT
+                  </span>
+                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
+                    Seosix SEO Toolkit
+                  </h3>
+                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
+                    Optimize and analyze. A suite of advanced search engine optimization utilities, rank trackers, and performance auditors designed for digital marketers.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
+                  <span>View Live Site</span>
+                  <span>→</span>
+                </div>
               </div>
             </div>
           </FlowSection>
@@ -725,14 +808,14 @@ export default function App() {
             aria-label="SmartBill" 
             onClick={() => window.open("https://seosixofficial.github.io/smartbill_site/", '_blank')}
           >
+            {/* Desktop-only full cover layout */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
               style={{ backgroundImage: 'url(/smartbill.png)' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
             
-            {/* Top Content (Title) */}
-            <div className="absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
+            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
                 04 — FEATURED PROJECT
               </span>
@@ -741,11 +824,35 @@ export default function App() {
               </h3>
             </div>
 
-            {/* Bottom Content (Button) */}
-            <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
+            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
               <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
                 <span>View Live Site</span>
                 <span>→</span>
+              </div>
+            </div>
+
+            {/* Mobile-only split layout */}
+            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
+              <div 
+                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
+                style={{ backgroundImage: 'url(/smartbill.png)' }}
+              />
+              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                    04 — FEATURED PROJECT
+                  </span>
+                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
+                    SmartBill System
+                  </h3>
+                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
+                    Billing made simple. A modern invoice generator and client billing system featuring interactive reports, PDF generation, and payment tracking.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
+                  <span>View Live Site</span>
+                  <span>→</span>
+                </div>
               </div>
             </div>
           </FlowSection>
@@ -756,7 +863,12 @@ export default function App() {
       <div 
         ref={floatingCardRef} 
         className="absolute z-40 pointer-events-auto opacity-0"
-        style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+        style={{ 
+          transformStyle: 'preserve-3d', 
+          WebkitTransformStyle: 'preserve-3d',
+          perspective: 1000,
+          WebkitPerspective: 1000 
+        }}
       >
         <motion.div
           ref={cardRef}
@@ -769,12 +881,12 @@ export default function App() {
           }}
           transition={{ type: 'spring', stiffness: 150, damping: 20 }}
           className="w-full h-full relative"
-          style={{ transformStyle: 'preserve-3d' }}
+          style={{ transformStyle: 'preserve-3d', WebkitTransformStyle: 'preserve-3d' }}
         >
           {/* FRONT FACE */}
           <div 
             className="w-full h-full absolute inset-0 rounded-[32px] overflow-hidden bg-neutral-950 border border-white/10 shadow-2xl"
-            style={backfaceStyle}
+            style={frontFaceStyle}
           >
             <img 
               src="/profile.jpg" 
@@ -789,8 +901,7 @@ export default function App() {
           <div 
             className="w-full h-full absolute inset-0 rounded-[32px] overflow-hidden bg-neutral-950 border border-white/10 shadow-2xl"
             style={{ 
-              ...backfaceStyle, 
-              transform: 'rotateY(180deg)',
+              ...backFaceStyle, 
               boxSizing: 'border-box'
             }}
           >
