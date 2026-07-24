@@ -643,223 +643,7 @@ export default function App() {
         <FlowArt aria-label="Featured Projects Showcase">
           {/* Slide 1 */}
           <FlowSection 
-            aria-label="CAF Construction" 
-            onClick={() => window.open("https://seosixofficial.github.io/construction1/", '_blank')}
-          >
-            {/* Desktop-only full cover layout */}
-            <div 
-              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-              style={{ backgroundImage: 'url(/construction.jpg)' }}
-            />
-            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
-            
-            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                01 — FEATURED PROJECT
-              </span>
-              <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
-                CAF Construction
-              </h3>
-            </div>
-
-            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
-              <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
-                <span>View Live Site</span>
-                <span>→</span>
-              </div>
-            </div>
-
-            {/* Mobile-only split layout */}
-            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
-              <div 
-                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
-                style={{ backgroundImage: 'url(/construction.jpg)' }}
-              />
-              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
-                <div className="flex flex-col gap-2">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                    01 — FEATURED PROJECT
-                  </span>
-                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
-                    CAF Construction
-                  </h3>
-                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
-                    Building dreams into reality. A premium digital showcase highlighting structural engineering, modern architectural designs, and active project portfolios.
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
-                  <span>View Live Site</span>
-                  <span>→</span>
-                </div>
-              </div>
-            </div>
-          </FlowSection>
-
-          {/* Slide 2 */}
-          <FlowSection 
-            aria-label="Café & Restaurant" 
-            onClick={() => window.open("https://seosixofficial.github.io/cafe/", '_blank')}
-          >
-            {/* Desktop-only full cover layout */}
-            <div 
-              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-              style={{ backgroundImage: 'url(/cafe.jpg)' }}
-            />
-            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
-            
-            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                02 — FEATURED PROJECT
-              </span>
-              <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
-                Café & Restaurant
-              </h3>
-            </div>
-
-            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
-              <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
-                <span>View Live Site</span>
-                <span>→</span>
-              </div>
-            </div>
-
-            {/* Mobile-only split layout */}
-            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
-              <div 
-                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
-                style={{ backgroundImage: 'url(/cafe.jpg)' }}
-              />
-              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
-                <div className="flex flex-col gap-2">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                    02 — FEATURED PROJECT
-                  </span>
-                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
-                    Café & Restaurant
-                  </h3>
-                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
-                    Good food, good mood. An immersive storefront experience designed for premium coffee shops and dining hubs, featuring ambient menus and client galleries.
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
-                  <span>View Live Site</span>
-                  <span>→</span>
-                </div>
-              </div>
-            </div>
-          </FlowSection>
-
-          {/* Slide 3 */}
-          <FlowSection 
-            aria-label="SEO Toolkit" 
-            onClick={() => window.open("https://seosix-4f731.web.app/", '_blank')}
-          >
-            {/* Desktop-only full cover layout */}
-            <div 
-              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-              style={{ backgroundImage: 'url(/seosix.png)' }}
-            />
-            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
-            
-            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                03 — FEATURED PROJECT
-              </span>
-              <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
-                Seosix SEO Toolkit
-              </h3>
-            </div>
-
-            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
-              <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
-                <span>View Live Site</span>
-                <span>→</span>
-              </div>
-            </div>
-
-            {/* Mobile-only split layout */}
-            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
-              <div 
-                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
-                style={{ backgroundImage: 'url(/seosix.png)' }}
-              />
-              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
-                <div className="flex flex-col gap-2">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                    03 — FEATURED PROJECT
-                  </span>
-                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
-                    Seosix SEO Toolkit
-                  </h3>
-                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
-                    Optimize and analyze. A suite of advanced search engine optimization utilities, rank trackers, and performance auditors designed for digital marketers.
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
-                  <span>View Live Site</span>
-                  <span>→</span>
-                </div>
-              </div>
-            </div>
-          </FlowSection>
-
-          {/* Slide 4 */}
-          <FlowSection 
-            aria-label="SmartBill" 
-            onClick={() => window.open("https://seosixofficial.github.io/smartbill_site/", '_blank')}
-          >
-            {/* Desktop-only full cover layout */}
-            <div 
-              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-              style={{ backgroundImage: 'url(/smartbill.png)' }}
-            />
-            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
-            
-            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                04 — FEATURED PROJECT
-              </span>
-              <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
-                SmartBill System
-              </h3>
-            </div>
-
-            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
-              <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
-                <span>View Live Site</span>
-                <span>→</span>
-              </div>
-            </div>
-
-            {/* Mobile-only split layout */}
-            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
-              <div 
-                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
-                style={{ backgroundImage: 'url(/smartbill.png)' }}
-              />
-              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
-                <div className="flex flex-col gap-2">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                    04 — FEATURED PROJECT
-                  </span>
-                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
-                    SmartBill System
-                  </h3>
-                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
-                    Billing made simple. A modern invoice generator and client billing system featuring interactive reports, PDF generation, and payment tracking.
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
-                  <span>View Live Site</span>
-                  <span>→</span>
-                </div>
-              </div>
-            </div>
-          </FlowSection>
-
-          {/* Slide 5 */}
-          <FlowSection 
-            aria-label="SEOSIX Official" 
+            aria-label="SEOSIX Official Website" 
             onClick={() => window.open("https://www.seosixofficial.in/", '_blank')}
           >
             {/* Desktop-only full cover layout */}
@@ -871,7 +655,7 @@ export default function App() {
             
             <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                05 — FEATURED PROJECT
+                01 — FEATURED PROJECT
               </span>
               <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
                 SEOSIX Official Website
@@ -894,7 +678,7 @@ export default function App() {
               <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
                 <div className="flex flex-col gap-2">
                   <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                    05 — FEATURED PROJECT
+                    01 — FEATURED PROJECT
                   </span>
                   <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
                     SEOSIX Official Website
@@ -911,7 +695,7 @@ export default function App() {
             </div>
           </FlowSection>
 
-          {/* Slide 6 */}
+          {/* Slide 2 */}
           <FlowSection 
             aria-label="MA Square Construction" 
             onClick={() => window.open("https://aslam-kappa.vercel.app/", '_blank')}
@@ -925,7 +709,7 @@ export default function App() {
             
             <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                06 — FEATURED PROJECT
+                02 — FEATURED PROJECT
               </span>
               <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
                 MA Square Construction
@@ -948,13 +732,229 @@ export default function App() {
               <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
                 <div className="flex flex-col gap-2">
                   <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
-                    06 — FEATURED PROJECT
+                    02 — FEATURED PROJECT
                   </span>
                   <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
                     MA Square Construction
                   </h3>
                   <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
                     Excellence in building. A premium architectural design and custom building showcase in Trichy & Dindigul, engineered for durability, comfort, and timeless value.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
+                  <span>View Live Site</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </div>
+          </FlowSection>
+
+          {/* Slide 3 */}
+          <FlowSection 
+            aria-label="CAF Construction" 
+            onClick={() => window.open("https://seosixofficial.github.io/construction1/", '_blank')}
+          >
+            {/* Desktop-only full cover layout */}
+            <div 
+              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              style={{ backgroundImage: 'url(/construction.jpg)' }}
+            />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
+            
+            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                03 — FEATURED PROJECT
+              </span>
+              <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
+                CAF Construction
+              </h3>
+            </div>
+
+            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
+              <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
+                <span>View Live Site</span>
+                <span>→</span>
+              </div>
+            </div>
+
+            {/* Mobile-only split layout */}
+            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
+              <div 
+                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
+                style={{ backgroundImage: 'url(/construction.jpg)' }}
+              />
+              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                    03 — FEATURED PROJECT
+                  </span>
+                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
+                    CAF Construction
+                  </h3>
+                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
+                    Building dreams into reality. A premium digital showcase highlighting structural engineering, modern architectural designs, and active project portfolios.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
+                  <span>View Live Site</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </div>
+          </FlowSection>
+
+          {/* Slide 4 */}
+          <FlowSection 
+            aria-label="Café & Restaurant" 
+            onClick={() => window.open("https://seosixofficial.github.io/cafe/", '_blank')}
+          >
+            {/* Desktop-only full cover layout */}
+            <div 
+              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              style={{ backgroundImage: 'url(/cafe.jpg)' }}
+            />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
+            
+            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                04 — FEATURED PROJECT
+              </span>
+              <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
+                Café & Restaurant
+              </h3>
+            </div>
+
+            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
+              <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
+                <span>View Live Site</span>
+                <span>→</span>
+              </div>
+            </div>
+
+            {/* Mobile-only split layout */}
+            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
+              <div 
+                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
+                style={{ backgroundImage: 'url(/cafe.jpg)' }}
+              />
+              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                    04 — FEATURED PROJECT
+                  </span>
+                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
+                    Café & Restaurant
+                  </h3>
+                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
+                    Good food, good mood. An immersive storefront experience designed for premium coffee shops and dining hubs, featuring ambient menus and client galleries.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
+                  <span>View Live Site</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </div>
+          </FlowSection>
+
+          {/* Slide 5 */}
+          <FlowSection 
+            aria-label="SEO Toolkit" 
+            onClick={() => window.open("https://seosix-4f731.web.app/", '_blank')}
+          >
+            {/* Desktop-only full cover layout */}
+            <div 
+              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              style={{ backgroundImage: 'url(/seosix.png)' }}
+            />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
+            
+            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                05 — FEATURED PROJECT
+              </span>
+              <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
+                Seosix SEO Toolkit
+              </h3>
+            </div>
+
+            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
+              <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
+                <span>View Live Site</span>
+                <span>→</span>
+              </div>
+            </div>
+
+            {/* Mobile-only split layout */}
+            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
+              <div 
+                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
+                style={{ backgroundImage: 'url(/seosix.png)' }}
+              />
+              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                    05 — FEATURED PROJECT
+                  </span>
+                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
+                    Seosix SEO Toolkit
+                  </h3>
+                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
+                    Optimize and analyze. A suite of advanced search engine optimization utilities, rank trackers, and performance auditors designed for digital marketers.
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
+                  <span>View Live Site</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </div>
+          </FlowSection>
+
+          {/* Slide 6 */}
+          <FlowSection 
+            aria-label="SmartBill" 
+            onClick={() => window.open("https://seosixofficial.github.io/smartbill_site/", '_blank')}
+          >
+            {/* Desktop-only full cover layout */}
+            <div 
+              className="hidden md:block absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              style={{ backgroundImage: 'url(/smartbill.png)' }}
+            />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75 pointer-events-none" />
+            
+            <div className="hidden md:block absolute top-6 left-6 md:top-10 md:left-10 z-10 select-none pointer-events-none">
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                06 — FEATURED PROJECT
+              </span>
+              <h3 className="font-antonio text-2xl md:text-4xl font-bold uppercase tracking-tight text-[#F8F9FA] mt-1 md:mt-2">
+                SmartBill System
+              </h3>
+            </div>
+
+            <div className="hidden md:block absolute bottom-6 right-6 md:bottom-10 md:right-10 z-10 select-none pointer-events-none">
+              <div className="flex items-center gap-2 text-xs md:text-sm font-bold font-sans text-black bg-[#ffde00] group-hover:bg-[#F8F9FA] px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-md">
+                <span>View Live Site</span>
+                <span>→</span>
+              </div>
+            </div>
+
+            {/* Mobile-only split layout */}
+            <div className="flex md:hidden flex-col h-full w-full bg-[#161616]/90 backdrop-blur-sm">
+              <div 
+                className="h-[48%] w-full bg-cover bg-center border-b border-white/5"
+                style={{ backgroundImage: 'url(/smartbill.png)' }}
+              />
+              <div className="flex-1 p-6 flex flex-col justify-between items-start text-left select-none">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#ffde00]">
+                    06 — FEATURED PROJECT
+                  </span>
+                  <h3 className="font-antonio text-2xl font-bold uppercase tracking-tight text-[#F8F9FA]">
+                    SmartBill System
+                  </h3>
+                  <p className="font-sans text-xs text-[#F8F9FA]/60 leading-relaxed mt-1">
+                    Billing made simple. A modern invoice generator and client billing system featuring interactive reports, PDF generation, and payment tracking.
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 text-xs font-bold font-sans text-black bg-[#ffde00] px-4 py-2 rounded-full mt-4">
